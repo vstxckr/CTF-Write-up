@@ -38,11 +38,11 @@ int main(int argc, char **argv)
 
 - This challenge is basically the same as stack6, but it's prevent us to use buffer overflow to redirect the program into stack or libc
 
-![img](protostar/stack7/assets/info_proc_map.png)
+![img](/protostar/stack7/assets/info_proc_map.png)
 
-![img](protostar/stack7/assets/sys_ex_addr.png)
+![img](/protostar/stack7/assets/sys_ex_addr.png)
 
-![img](protostar/stack7/assets/ret.png)
+![img](/protostar/stack7/assets/ret.png)
 
 - But we can return to any text segment of this program which we can find with objdump and use it like a repeater.
 
