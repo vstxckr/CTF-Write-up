@@ -47,7 +47,7 @@ int main()
 
 ![img](/ROP/Static/assets/ROP.png)
 
-- To implement exceve("/bin/sh", 0, 0), we look up the exceve in the syscall table of x86_32 bit 
+- To implement exceve("/bin/sh", 0, 0), we look up exceve's system call number in the syscall table of x86_32 bit 
 
 ![img](/ROP/Static/assets/exceve_syscall.png)
 
@@ -112,4 +112,5 @@ p.interactive()
 ## Reference
 
 [syscalls](https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md#x86-32_bit)
+
 [ROPstatic](https://wiki.bi0s.in/pwning/rop/static/)
