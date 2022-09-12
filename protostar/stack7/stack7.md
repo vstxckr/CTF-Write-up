@@ -38,17 +38,17 @@ int main(int argc, char **argv)
 
 - This challenge is basically the same as stack6, but it's prevent us to use buffer overflow to redirect the program into stack or libc
 
-![img](/stack7/assets/info_proc_map.png)
-![img](/stack7/assets/sys_ex_addr.png)
-![img](/stack7/assets/ret.png)
+![img](protostar/stack7/assets/info_proc_map.png)
+![img](protostar/stack7/assets/sys_ex_addr.png)
+![img](protostar/stack7/assets/ret.png)
 
 - But we can return to any text segment of this program which we can find with objdump and use it like a repeater.
 
-![img](/stack7/assets/text_seg.png)
+![img](/protostar/stack7/assets/text_seg.png)
 
 - Let's find some ret instructions to bypass "if condition" :3
 
-![img](/stack7/assets/ret_addr.png)
+![img](/protostar/stack7/assets/ret_addr.png)
 
 - So many rets, but I choose 0x8048383.
 
@@ -92,4 +92,4 @@ print(payload)
 
 ## Result
 
-![img](/stack7/assets/result.png)
+![img](/protostar/stack7/assets/result.png)
