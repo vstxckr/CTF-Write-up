@@ -18,7 +18,7 @@ char *str = "/bin/sh";          // <- RODATA
 void vuln()
 {
     char buffer[BUFFSIZE];
-    read(0, buffer, 0x200);     // <- this code cause buffer overflow
+    read(0, buffer, 0x200);     // <- this code causes buffer overflow
 }
 
 int main()
@@ -29,11 +29,11 @@ int main()
 
 ## Overview & Main Idea
 
-- Let's check some information about binary file
+- Let's check some informations about binary file
 
 ![img](/ROP/Static/assets/check_file.png)
 
-> NX is enabled so we can't ret2shellcode, but this program has statically linked and no PIE, so we can use ROPgadget to find some gadget in binary file and use it to implement something like exceve("/bin/sh", 0, 0) to get shell :3
+> NX is enabled so we can't ret2shellcode, but this program has statically linked and no PIE, we can use ROPgadget to find some gadgets in binary file and use it to implement something like exceve("/bin/sh", 0, 0) to get shell :3
 
 ## Details
 
@@ -42,6 +42,10 @@ int main()
 - Return Oriented Programming is a technique in which we use existing small snippets of assembly code/gadgets to create a chain of instructions which will eventually spawn a shell or cause the program to do some complex things. This is method is usually employed when there is a Stack buffer overflow and there are no win or give_shell functions. So we use ROP to invoke system or an execve syscall.
 
 - Its called ROP as the basic idea of the technique is to use the ret statement to change control flow of the program. We use a tool called ROPgadget for finding gadgets. Another tool used for the same is ropper
+
+- You can see this image to understand how does ROP work
+
+![img](/ROP/Static/assets/ROP.png)
 
 - To implement exceve("/bin/sh", 0, 0), we look up the syscall table of x86_32 bit 
 
