@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 }
 ```
 
-## Overview & Main Idea
+## Overview & Idea
 
 - This challenge is basically the same as stack6, but it's prevent us to use buffer overflow to redirect the program into stack or libc
 

@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 }
 ```
 
-## Overview & Main Idea
+## Overview & Idea
 
 - This challenge has no-pie, no stack protector, rwx segment.
 
