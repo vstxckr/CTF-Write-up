@@ -62,7 +62,7 @@ edx     -     0x0
 int     0x80
 ```
 
-- First we find the offset that we need to overwrite. By some simple steps, I find it's 148 bytes :3.
+- First, we'll find the offset that we need to overwrite. By some simple steps, I found it's 148 bytes :3.
 
 - Next, I found some gadgets below with ROPgadget.
 
