@@ -27,7 +27,7 @@ int main()
 }
 ```
 
-## Overview & Main Idea
+## Overview & Idea
 
 - Let's check some informations about binary file
 
