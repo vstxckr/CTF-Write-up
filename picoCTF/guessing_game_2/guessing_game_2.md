@@ -79,7 +79,7 @@ int main(int argc, char **argv){
 
 ![img](/picoCTF/guessing_game_2/assets/bin_info.png)
 
-- With this challenge, I take advantage of brute-force script and format string to bypass some condition code and stack protection, after bypassed, I have just found which libc that server used, then the challenge return back to ret2libc.
+- With this challenge, I take advantage of brute-force script and format string to bypass condition code and stack protection, after bypassed, I have to find which libc that server used, then the challenge return back to ret2libc.
 
 ## Detail
 
