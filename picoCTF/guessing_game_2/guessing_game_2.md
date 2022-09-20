@@ -186,7 +186,7 @@ pwndbg> x/200xw $esp
                                                               +------------+
                                                               +------------+
 0xffffd3e0:     0x080489fc      0x08049fbc      0xffffd408    | 0x0804888c |    <- 0xffffd3ec is ret of win
-															  +------------+
+                                                              +------------+
 0xffffd3f0:     0x00000001      0xffffd4c4      0x000003e8      0x00000001
 0xffffd400:     0xffffd420      0x00000000      0x00000000      0xf7ddf905
 0xffffd410:     0x00000001      0x08048520      0x00000000      0xf7ddf905
