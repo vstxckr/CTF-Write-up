@@ -90,7 +90,7 @@ Load/Run.......|.........................|..........|........
 
 - As the previous section mentioned, PLTs allow lazy resolution of functions. When the shared library is first loaded, the function calls have not been resolved yet:
 
-![img](/ROP/Dynamic/assets/PLT_actions.png)
+![img](/ROP/Dynamic/bi0s/assets/PLT_actions.png)
 
 ### **Explanation:**
 
@@ -111,7 +111,7 @@ Load/Run.......|.........................|..........|........
 
 - After the first call, the diagram looks a bit differently:
 
-![img](/ROP/Dynamic/assets/PLT_actions_2.png)
+![img](/ROP/Dynamic/bi0s/assets/PLT_actions_2.png)
 
 - Note that GOT[n] now points to the actual func instead of back into the PLT. So, when func is called again:
   + PLT[n] is called and jumps to the address pointed to in GOT[n].
@@ -124,21 +124,21 @@ Load/Run.......|.........................|..........|........
 
 - Disassemble puts and we have this:
 
-![img](/ROP/Dynamic/assets/disass_puts.png)
+![img](/ROP/Dynamic/bi0s/assets/disass_puts.png)
 
 - So `0x08049080` is address of puts entry in plt, it jumps to dereference of `0x804c010` in data segment, when I check the value it references:
 
-![img](/ROP/Dynamic/assets/puts_disass_2.png)
+![img](/ROP/Dynamic/bi0s/assets/puts_disass_2.png)
 
 - Check the instruction with this address `0x08049050` I found:
 
-![img](/ROP/Dynamic/assets/puts_disass_3.png)
+![img](/ROP/Dynamic/bi0s/assets/puts_disass_3.png)
 
 - It jumps back to instruction that has address before puts@plt, This is has something similar with informations I found above in shared library :3
 
 - Oke, let's run through puts calling and check the address `0x804c010`:
 
-![img](/ROP/Dynamic/assets/disass_puts_4.png)
+![img](/ROP/Dynamic/bi0s/assets/disass_puts_4.png)
 
 - Yea, content of `0x804c010` has change to address of puts in libc is `0xf7e304e0`, this address is affected by ASLR which is random every time we run the program. 
 - So, it works exactly like what we talk in above about shared library. Let's write some script exploit this chall :3
@@ -148,7 +148,7 @@ Load/Run.......|.........................|..........|........
 
 - First, we find offset of puts system with pwndbg:
 
-![img](/ROP/Dynamic/assets/puts_offset.png)
+![img](/ROP/Dynamic/bi0s/assets/puts_offset.png)
 
 - And offset that we must overwrite is 148 bytes, I found it with magical power :3.
 
@@ -216,4 +216,4 @@ p.interactive()
 
 ## Result
 
-![img](/ROP/Dynamic/assets/result.png)
+![img](/ROP/Dynamic/bi0s/assets/result.png)
