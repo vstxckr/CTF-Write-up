@@ -33,11 +33,11 @@ int main(int argc, char **argv)
 }
 ```
 
-## IDEA:
+## IDEA
 
 - The idea is overwrite stack to change the "modified" variable to 0x0d0a0d0a to go inside true branch of if.
 
-## DETAILS:
+## DETAIL
 
 - The strcpy will copy content of "variable" point to until it gets '\0', it does not limit the size copy, so we can overwrite to stack we need to overwrite 64 bytes to fill up the "buffer" and 0x0d0a0d0a for "modified" variable the value of "modified" variable will look likes this in payload: '\x0a\x0d\x0a\x0d' (the reverse of each 4 bytes is because this program is 32-bit and use little edian).
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 
 - Finally, we run the program, and below is payload to exploit.
 
-## EXPLOIT:
+## EXPLOIT
 
 - Payload:
 
