@@ -38,8 +38,8 @@ int main(int argc, char **argv)
 
 ```
 			argv[0]     argv[1] 	.... 
-			   | 		   |
-			   v 		   v
+			   | 	       |
+			   v 	       v
 			./program  input[1]     ....
 ```
 
