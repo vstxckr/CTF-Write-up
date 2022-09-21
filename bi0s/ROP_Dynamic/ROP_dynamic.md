@@ -90,7 +90,7 @@ Load/Run.......|.........................|..........|........
 
 - As the previous section mentioned, PLTs allow lazy resolution of functions. When the shared library is first loaded, the function calls have not been resolved yet:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/PLT_actions.png)
+![img](/bi0s/ROP_Dynamic/assets/PLT_actions.png)
 
 ### **Explanation:**
 
@@ -124,21 +124,21 @@ Load/Run.......|.........................|..........|........
 
 - Disassemble puts and we have this:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/disass_puts.png)
+![img](/bi0s/ROP_Dynamic/assets/disass_puts.png)
 
 - So `0x08049080` is address of puts entry in plt, it jumps to dereference of `0x804c010` in data segment, when I check the value it references:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/puts_disass_2.png)
+![img](/bi0s/ROP_Dynamic/assets/puts_disass_2.png)
 
 - Check the instruction with this address `0x08049050` I found:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/puts_disass_3.png)
+![img](/bi0s/ROP_Dynamic/assets/puts_disass_3.png)
 
 - It jumps back to instruction that has address before puts@plt, This is has something similar with informations I found above in shared library :3
 
 - Oke, let's run through puts calling and check the address `0x804c010`:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/disass_puts_4.png)
+![img](/bi0s/ROP_Dynamic/assets/disass_puts_4.png)
 
 - Yea, content of `0x804c010` has change to address of puts in libc is `0xf7e304e0`, this address is affected by ASLR which is random every time we run the program. 
 - So, it works exactly like what we talk in above about shared library. Let's write some script exploit this chall :3
@@ -148,7 +148,7 @@ Load/Run.......|.........................|..........|........
 
 - First, we find offset of puts system with pwndbg:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/puts_offset.png)
+![img](/bi0s/ROP_Dynamic/assets/puts_offset.png)
 
 - And offset that we must overwrite is 148 bytes, I found it with magical power :3.
 
@@ -216,4 +216,4 @@ p.interactive()
 
 ## Result
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/result.png)
+![img](/bi0s/ROP_Dynamic/assets/result.png)
