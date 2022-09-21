@@ -26,7 +26,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 - Let's check the infomations of binary file
 
-![img](/ROP/Dynamic/xctf/assets/file_check.png)
+![img](/xctf/assets/file_check.png)
 
 - The binary file has no stack protector, no PIE, so we can use BOF to overwrite ret of vulnerable_function with address of system() in libc to get shell.
 
@@ -36,7 +36,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 - The write@plt and write@got.plt I found
 
-![img](/ROP/Dynamic/xctf/assets/print_write_libc.png)
+![img](/xctf/assets/print_write_libc.png)
 
 - And we need the offset that we must overwrite to reach to the ret of vulnerable_function is `140 bytes`. This below is script that I use to leak write function address in libc
 
@@ -131,5 +131,5 @@ p.interactive()
 
 ## Result
 
-![img](/ROP/Dynamic/xctf/assets/result.png)
+![img](/xctf/assets/result.png)
 

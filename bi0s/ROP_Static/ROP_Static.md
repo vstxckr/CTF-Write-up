@@ -31,7 +31,7 @@ int main()
 
 - Let's check some informations about binary file
 
-![img](/ROP/Static/assets/check_file.png)
+![img](/bi0s/ROP_Static/assets/check_file.png)
 
 > NX is enabled so we can't ret2shellcode, but this program has statically linked and no PIE, we can use ROPgadget to find some gadgets in binary file and use it to implement something like exceve("/bin/sh", 0, 0) to get shell :3
 
@@ -45,11 +45,11 @@ int main()
 
 - You can see this example to understand how does ROP work
 
-![img](/ROP/Static/assets/ROP.png)
+![img](/bi0s/ROP_Static/assets/ROP.png)
 
 - To implement exceve("/bin/sh", 0, 0), we look up exceve's system call number in the syscall table of x86_32 bit 
 
-![img](/ROP/Static/assets/exceve_syscall.png)
+![img](/bi0s//ROP_Static/assets/exceve_syscall.png)
 
 ```
 exceve("/bin/sh", 0, 0) in assembly
@@ -66,11 +66,11 @@ int     0x80
 
 - Next, I found some gadgets below with ROPgadget.
 
-![img](/ROP/Static/assets/gadget.png)
+![img](/bi0s//ROP_Static/assets/gadget.png)
 
 - Finally, we need to find "/bin/sh" string, "/bin/sh" stored in RODATA because of its initialization `char *str = "/bin/sh"`
 
-![img](/ROP/Static/assets/bin_sh.png)
+![img](/bi0s/ROP_Static/assets/bin_sh.png)
 
 ## Exploit
 
@@ -107,7 +107,7 @@ p.interactive()
 
 ## Result
 
-![img](/ROP/Static/assets/result.png)
+![img](/bi0s/ROP_Static/assets/result.png)
 
 ## Reference
 
