@@ -111,7 +111,7 @@ Load/Run.......|.........................|..........|........
 
 - After the first call, the diagram looks a bit differently:
 
-![img](/bi0s/ROP_Dynamic/bi0s/assets/PLT_actions_2.png)
+![img](/bi0s/ROP_Dynamic/assets/PLT_actions_2.png)
 
 - Note that GOT[n] now points to the actual func instead of back into the PLT. So, when func is called again:
   + PLT[n] is called and jumps to the address pointed to in GOT[n].
