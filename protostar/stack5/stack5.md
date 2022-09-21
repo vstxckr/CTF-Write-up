@@ -32,7 +32,7 @@ _start:
   pop 	eax                ; mov 	eax, 0xb
   xor 	edx, edx     	   ; mov 	edx, 0
 
-  push 	edx                ; mov 	eax, "/bin/sh"
+  push 	edx                ; mov 	ebx, "/bin/sh"
   push 	0x68732f2f
   push 	0x6e69622f
   mov 	ebx, esp
