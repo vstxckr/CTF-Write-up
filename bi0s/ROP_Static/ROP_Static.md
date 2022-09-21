@@ -49,7 +49,7 @@ int main()
 
 - To implement exceve("/bin/sh", 0, 0), we look up exceve's system call number in the syscall table of x86_32 bit 
 
-![img](/bi0s//ROP_Static/assets/exceve_syscall.png)
+![img](/bi0s/ROP_Static/assets/exceve_syscall.png)
 
 ```
 exceve("/bin/sh", 0, 0) in assembly
@@ -66,7 +66,7 @@ int     0x80
 
 - Next, I found some gadgets below with ROPgadget.
 
-![img](/bi0s//ROP_Static/assets/gadget.png)
+![img](/bi0s/ROP_Static/assets/gadget.png)
 
 - Finally, we need to find "/bin/sh" string, "/bin/sh" stored in RODATA because of its initialization `char *str = "/bin/sh"`
 
