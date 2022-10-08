@@ -36,7 +36,7 @@ int main(int argc, char **argv) 	// we'll overwrite the return value of main fun
 				0xbffffcbc:     0xb7eadc76      0x00000001      0xbffffd64      0xbffffd6c
 				0xbffffccc:     0xb7fe1848      0xbffffd20      0xffffffff      0xb7ffeff4
 				0xbffffcdc:     0x0804824b      0x00000001      0xbffffd20      0xb7ff0626
-													.....
+							          .....
 ```
 
 - And we has ebp's value of the function that call the main function:
@@ -45,11 +45,11 @@ int main(int argc, char **argv) 	// we'll overwrite the return value of main fun
 				(gdb) info registers
 				eax            0xbffffd64       -1073742492
 				ecx            0xf04f1569       -263252631
-				edx            0x1      1
+				edx            0x1              1
 				ebx            0xb7fd7ff4       -1208123404
 				esp            0xbffffcbc       0xbffffcbc
 				ebp            0xbffffd38       0xbffffd38
-									.....
+							
 ````
 
 - So address of return address is 0xbffffcbc, we will enter some input to find where "buffer" variable write on stack, and then we calculate the distance to overwrite.
@@ -62,11 +62,11 @@ int main(int argc, char **argv) 	// we'll overwrite the return value of main fun
 				(gdb) x/50xw$esp
 				0xbffffc60:     0xbffffc70      0xb7ec6165					0xbffffc78				0xb7eada75
 
-	start ->    0xbffffc70:     0x61616161      0x61616161					0x61616161				0x61616161
+	start ->                0xbffffc70:     0x61616161      0x61616161					0x61616161				0x61616161
 				0xbffffc80:     0x61616161      0x61616161					0x61616161				0x61616161
 				0xbffffc90:     0x61616161      0x61616161					0x61616161				0x61616161
 				0xbffffca0:     0x61616161      0x61616161					0x61616161				0x61616161   <- end 
-				0xbffffcb0:    (0x08048400      0x00000000)	<- padding 		0xbffffd38 <- (ebp)		0xb7eadc76   <- this is ret
+				0xbffffcb0:    (0x08048400      0x00000000)	<- padding 		        0xbffffd38 <- (ebp)		        0xb7eadc76   <- this is ret
 
 				0xbffffcc0:     0x00000001      0xbffffd64					0xbffffd6c				0xb7fe1848
 														......
