@@ -2,7 +2,7 @@
 
 # OVERVIEW & IDEA
 
-- This challenge gives us a 32-bits binary file and its source code. Below is informations of binary file.
+- This challenge gives us a 32-bit binary file and its source code. Below is informations of binary file.
 
 ```
 λ ~/flag_leak/ file vuln
@@ -10,6 +10,7 @@
 vuln: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=7cdf03860c5c78d6e375e91d88a2b05b28389fd0, for GNU/Linux 3.2.0, not stripped
 
 λ ~/flag_leak/ checksec --file=vuln
+
 [*] '~/flag_leak/vuln'
     Arch:     i386-32-little
     RELRO:    Partial RELRO
