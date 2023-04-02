@@ -2,11 +2,11 @@
 
 > I solve this challenge after the contest ended.
 
-[img](./assets/overview.png)
+![img](./assets/overview.png)
 
 ## OVERVIEW
 
-- This challenge talks about substitution cipher and give us a python program `enc.py` that take a message from plain.txt and use AES CBC encryption to take the output is in `cipher.txt`.
+- This challenge talks about substitution cipher and give us a python program `enc.py` that take a message from `plain.txt` and use AES CBC encryption to take the output is in `cipher.txt`.
 
 - Detail on `enc.py`. The program just allow 32 character for encryption.
 
@@ -35,10 +35,10 @@ a = encrypted.split('\n')
 
 for i in range(0, len(a)-3):
     if (a[i] == a[i+1] and a[i+1] == a[i+2]):
-        print(a[i-1], i+1, sep=' - ')
-        print(a[i], i+1, sep=' - ')
+        print(a[i-1], i-1, sep=' - ')
+        print(a[i], i, sep=' - ')
         print(a[i+1], i+1, sep=' - ')
-        print(a[i+2], i+1, sep=' - ')
+        print(a[i+2], i+2, sep=' - ')
 ```
 
 - Here is result.
@@ -67,14 +67,17 @@ for i in tab:
 
 ![img](./assets/frequency.png)
 
-- We can see the frequency of it has some character just 1, 2, 3. It's very intersting character :ghost:. But look! Each cipher has right first byte different.
+- We can see the frequency of it has some character just 1, 2, 3. It's very intersting character :ghost:. But look! Each cipher has left first byte different.
 - So we can simplify all of it by just use first byte. I will use `nvim` with `Ctrl + V` to remove the unuse remain, then use hex to text and text to hex combine with notepad to convert it to bellow.
 
 ![img](./assets/converted.png)
 
+- By some guessing, we can easily know the `"A"`, `"T"`, `"{"`, `"}"` and `"_"` is `73` because  between `c7` and `a1` has all `3` `73` coded character.
+
 ![img](./assets/alphabet.png)
 
-- By some guessing, we can easily know the `"A"`, `"T"`, `"{"`, `"}"` and `"_"` is `73` because  between `c7` and `a1` has all `3` `73` coded character.
+![img](./assets/hex.png)
+
 
 - But, we have `qquipqiup` tool to analyze and calculate the message, so I just ignore the alphabet character, and I just guess the others character and process the data I have by this code:
 
