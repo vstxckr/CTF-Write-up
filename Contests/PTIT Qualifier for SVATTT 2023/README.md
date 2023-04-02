@@ -5,7 +5,7 @@
 | Crypto 1  | [link](./Crypto/crypto1/crypto1.md)  |
 | Crypto 2  | [link](./Crypto/crypto2/crypto2.md)  |
 | For 1  | [link](./Forensics/For1/for1.md) |
-| Web 1  | [link](./Web/Web02/web02.md) |
+| Web 2  | [link](./Web/Web02/web02.md) |
 | RE 1  | [link](./Reverse/RE1/re1.md) |
 | RE 2  | [link](./Reverse/RE2/re2.md) |
 | RE 3  | [link](./Reverse/RE3/re3.md)  |
