@@ -16,6 +16,8 @@
 
 - The `\x1B[2K\x1B[1G` is ANSI escape sequence, which clear the screen that contains flag. So the flag's content was located in `Str`. Let's do some check with `Str`.
 
+![img](./assets/test_run.png)
+
 - By checking the `xor_string();`. I know that this function just do xor cipher with key is `"ISPw"` and put it in `Str`.
 
 ![img](./assets/xor_string.png)
