@@ -137,10 +137,10 @@ for i in table:
 
 ![img](./assets/6.png)
 
-- Ở 3 blocks cuối, do có nhiều hơn một chuỗi đưa ra kq chính xác nên sau một hồi xem xét mình đã ghép được thành một message đúng là: `BAINAYRATLADETOANG`. 
+- Ở 3 blocks cuối, do có nhiều hơn một chuỗi đưa ra kết quả đúng cho đầu vào file thực thi nên sau một hồi xem xét mình đã ghép được thành một message đúng là: `BAINAYRATLADETOANG`. 
 
 - Input vào file babyRE ta nhận được thông báo flag chính xác:
 
 ![img](./assets/flag.png)
 
-`Flag: ATTT{BAINAYRATLADETOANG}`.
+> `Flag: ATTT{BAINAYRATLADETOANG}`.
