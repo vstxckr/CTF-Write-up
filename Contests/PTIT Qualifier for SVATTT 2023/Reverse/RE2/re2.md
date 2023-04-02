@@ -6,11 +6,11 @@
 
 - File: [chall](./chall/babyRE).
 
-- Challenge này chỉ cho chúng ta một file ELF 64-bit. Mình có cho vào IDA để decompile file này và nhận thấy bên trong code khá là sợ :D.
+- Challenge này chỉ cho chúng ta một file ELF 64-bit. Mình có cho vào IDA để decompile file này và nhận thấy bên trong code khá là sợ :grinning:.
 
 ![img](./assets/main_1.png)
 
-- Nhìn sơ qua thì có vẻ như file này được compile từ code một file code C++, nhưng không sử dụng một vài chức năng cho debug nên trông khá là rối :(.
+- Nhìn sơ qua thì có vẻ như file này được compile từ code một file code C++, nhưng không sử dụng một vài chức năng cho debug nên trông khá là rối :skull:.
 - Do vậy nên mình tiến hành kiểm tra các phần code và cùng với đó sử dụng chatGPT để đẩy nhanh quá trình đọc code. Và về cơ bản thì hàm main thực hiện những chức năng như sau:
 
 ```Cpp
@@ -73,13 +73,16 @@ int main() {
     + Đầu tiên là phần input thì chương trình chỉ nhận ký tự in hoa.
     + Phần mã hóa sẽ mã hóa và kiểm tra từng block 3 phần tử từ input mình nhập vào.
 
-- Thử tính toán nhanh với việc thử tất cả các trường hợp từng block 3 một, mình sẽ cần phải thử `26*26*26 = 17576 lần`, mình cần thử với 6 blocks, nhưng do mỗi block độc lập với nhau, nên mình có thể chạy đồng thời 6 chương trình brute-force mỗi block đó. Như vậy là thời gian tìm được hết flag là có thể chấp nhận được.
+- Thử tính toán nhanh với việc thử tất cả các trường hợp từng block 3 một, mình sẽ cần phải thử `26*26*26 = 17576 lần`, mình cần thử với 6 blocks, nhưng do mỗi block độc lập với nhau, nên mình có thể chạy đồng thời 6 chương trình brute-force mỗi block đó. Như vậy là thời gian tìm được flag là có thể chấp nhận được. Máy xịn để làm gì cơ chứ :kissing:.
 
 ## DETAILS
 
 - Mình sẽ sử dụng python và pwntools để thực hiện chạy và truyền đối số vào chương trình. Bên dưới là chi tiết về script của mình cho block đầu tiên.
 
 ```python
+#! /usr/bin/python3
+#  filename: exp.py
+
 from pwn import *
 
 table = string.ascii_uppercase
@@ -134,7 +137,7 @@ for i in table:
 
 ![img](./assets/6.png)
 
-- Ghép lại và ta được message hoàn chỉnh: `BAINAYRATLADETOANG`.
+- Ở 3 blocks cuối, do có nhiều hơn một chuỗi đưa ra kq chính xác nên sau một hồi xem xét mình đã ghép được thành một message đúng là: `BAINAYRATLADETOANG`. 
 
 - Input vào file babyRE ta nhận được thông báo flag chính xác:
 

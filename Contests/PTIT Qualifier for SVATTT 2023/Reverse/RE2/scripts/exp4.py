@@ -1,3 +1,6 @@
+#! /usr/bin/python3
+#  filename: exp4.py
+
 from pwn import *
 
 table = string.ascii_uppercase
