@@ -2,6 +2,8 @@
 
 > I solve this challenge after contest was end.
 
+![img](./assets/overview.png)
+
 ## OVERVIEW
 
 - This challenge give us a PE32 executable file.
