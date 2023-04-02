@@ -1,5 +1,7 @@
 # CRYPTO1
 
+![img](./assets/overview.png)
+
 ## OVERVIEW
 
 - Challenge này cho chúng ta 2 files: enc.cpp, bases.txt.
