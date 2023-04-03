@@ -43,7 +43,7 @@ for i in range(0, len(a)-3):
 
 - Here is result.
 
-![img](./assets/flag_orm.png)
+![img](./assets/flag_form.png)
 
 - We just find one, so this is high possiblility is flag.
 
