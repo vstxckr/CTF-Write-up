@@ -6,9 +6,8 @@
 
 - This challenge give us a remote server that we need to connect with ssh, and asked us to run the binary file `"bin"` after connected.
 
-![img](/picoCTF/VNE/assets/connected.png)
+![img](/picoCTF/VNE/assets/replace_connected.png)
 
-![img](/picoCTF/VNE/assets/home.png)
 
 - After I connected to the server, I check the current home folder of given user and found the bin file.
 
@@ -30,6 +29,7 @@
 
 > Note: 
 > - After read some write-up from pro, I realize that I can use scp to download that file to my computer instead of above method :grinning:. The reason I don't use scp is that I fail by using it from pico server and can't connect to my local, so stupid :man_facepalming:
+> ![img](/picoCTF/VNE/assets/scp_transfer.png)
 > - And here is the raw binary [bin](/picoCTF/VNE/file/real_bin). It uses `system()` that is exactly like my later thought :ghost:.
 > ![img](/picoCTF/VNE/assets/decompile_p2.png)
 > - Thanks for [trhoanglan04's write-up](https://hackmd.io/@trhoanglan04/BkNgwg7xn) cause it is so useful!
