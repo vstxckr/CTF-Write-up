@@ -34,7 +34,7 @@
 - Mình sẽ chia `nm` thành 3 phần, phần đầu dùng để chứa địa chỉ của các ROP gadget, phần thứ 2 sẽ dùng để chứa shellcode, phần thứ 3 thì mình sẽ dùng để chứa data cho shellcode.
 - Do chúng ta không thể gọi đến lệnh lấy shell, nên mình sẽ thử in ra các file trên server xem có tìm được flag không (Thật ra đây là ý tưởng cuối cùng mình có thể làm).
 
-## Details:
+## DETAILS
 
 - Mình dư ra `48 bytes` khi lấp đầy được biến `v6`, mình cần `8 bytes` ghi đè `RBP` để tới được phần địa chỉ `RET` của hàm `main`. Như vậy là mình còn `40 bytes` để thao tác.
 - Thật may là file này được compile với `statically linked`, tức là file đã chứa hầu hết các hàm của thư viện, điều này sẽ thuận tiện cho việc tìm các gadget hơn.
@@ -118,3 +118,7 @@ p.send(payload)
 p.interactive()
 
 ```
+
+## RESULT
+
+![img](./assets/result.png)
