@@ -26,7 +26,7 @@
 
 ![img](/picoCTF/VNE/assets/usr_bin.png)
 
-- I have used the `objdump` but have no idea with bunch of `Assembly` code. So I use `od` to take all binary contents of `bin` and recover it in my computer with `HxD` then put it in IDA to decompile the file [recovered_bin_file](/picoCTF/VNE/file/bin).
+- I have used the `objdump` but have no idea with bunch of `Assembly` code. So I use `od` to take all binary contents of `bin` and recover it in my computer with `HxD` then put it in IDA to decompile [recovered_bin_file](/picoCTF/VNE/file/bin).
 
 - But unfortunately, The pseudo-code in IDA is unreadable :frowning_face:.
 
@@ -44,13 +44,13 @@
 
 - Oh :open_mouth:! it lists the contents of `/root` like `ls` command and inside `/root` have a file named `flag.txt`, it looks like high possiblity is flag of this challenge.
 
-- So, what will I do next? Hm... By this time, I still have no idea to extract that `flag.txt` file, even if I have nearly everything :confused:.
+- So, what will I do next? Hm... By this time, I still have no idea to leak the content of `flag.txt` file, even if I have nearly everything :confused:.
 
 - I have search all about `file permission on linux`, then `SUID` and `SGID File Permission`, then `privilege escalation` and even `ls command injection?` :skull:. But I don't find useful informations for this challenge.
 
 - But, then I have an idea from this clue: the `bin` file does some thing like `ls` command, so, does it use `execve` syscall? or something like that to execute the shell command? Then I can inject my shell command inside it to read the `flag.txt` file, cause the binary file have root permission for the `/root` folder.
 
-- I do that immediately after my thinking. And this is my solution about this challenge.
+- I did it immediately after that thought flashed. And this is my solution about this challenge.
 
 ## RESULT
 
