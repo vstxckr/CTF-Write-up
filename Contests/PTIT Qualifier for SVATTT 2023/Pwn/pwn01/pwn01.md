@@ -18,8 +18,8 @@
 ![img](./assets/seccomp-tools.png)
 
 - Tuy nhiên từ đây, ta biết là gần như chúng ta không thể lấy được shell đang chạy chương trình.
-- Tiếp trong hàm main, ta có 2 lệnh in màn hình, lệnh nhập cho biến nm với đầu vào `256` ký tự, in tiếp ra màn hình thông báo và lệnh `read(0, v6, 0x90);`, lệnh này gây buffer overflow vì biến v6 được khởi tạo có `96` bytes. Như vậy là mình có thể ghi đè thêm `0x30 bytes`.
-- Và sau đó là hàm `is_this_funny()` thực hiện việc kiểm tra `11` ký tự đầu của chuỗi `v6` xem có đúng bằng với chuỗi "I'm weebiii" không. Nếu không thì sẽ thực hiện thoát chương trình ngay. Còn nếu có thì chương trình được thực hiện tiếp đến khi thoát hàm main.
+- Tiếp trong hàm main, ta có 2 lệnh in màn hình, lệnh nhập cho biến nm với đầu vào `256` ký tự, in tiếp ra màn hình thông báo và lệnh `read(0, v6, 0x90);`, lệnh này gây buffer overflow vì biến v6 được khởi tạo có `96 bytes`. Như vậy là mình có thể ghi đè thêm `0x30 bytes`.
+- Và sau đó là hàm `is_this_funny()` thực hiện việc kiểm tra `11` ký tự đầu của chuỗi `v6` xem có đúng bằng với chuỗi `"I'm weebiii"` không. Nếu không thì sẽ thực hiện thoát chương trình ngay. Còn nếu có thì chương trình được thực hiện tiếp đến khi thoát hàm main.
 
 ![img](./assets/is_this_funny.png)
 
