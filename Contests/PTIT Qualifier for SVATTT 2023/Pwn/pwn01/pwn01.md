@@ -12,18 +12,18 @@
 
 ![img](./assets/main.png)
 
-- Hàm main đầu tiên setbuf() cho các file, sau đó gọi đến hàm init_seccomp().
-- Kiểm tra hàm init_seccomp(), mình biết được hàm tạo ra những quy tắc cho file, cụ thể ở đây là không cho phép sử dụng lệnh gọi execve (0x3b) và một số quy tắc khác với hàm bpf() mà mình chưa rõ (Cũng vì hàm này nên cũng tiêu tốn khá nhiều thời gian giải bài của mình :v).
+- Hàm main đầu tiên `setbuf()` cho các file, sau đó gọi đến hàm `init_seccomp()`.
+- Kiểm tra hàm init_seccomp(), mình biết được hàm tạo ra những quy tắc cho file, cụ thể ở đây là không cho phép sử dụng lệnh gọi `execve (0x3b)` và một số quy tắc khác với hàm `bpf()` mà mình chưa rõ (Cũng vì hàm này nên cũng tiêu tốn khá nhiều thời gian giải bài của mình :v).
 
 ![img](./assets/seccomp-tools.png)
 
 - Tuy nhiên từ đây, ta biết là gần như chúng ta không thể lấy được shell đang chạy chương trình.
-- Tiếp trong hàm main, ta có 2 lệnh in màn hình, lệnh nhập cho biến nm với đầu vào 256 ký tự, in tiếp ra màn hình thông báo và lệnh read(0, v6, 0x90);, lệnh này gây buffer overflow vì biến v6 được khởi tạo có 96 bytes. Như vậy là mình có thể ghi đè thêm 0x30 bytes.
-- Và sau đó là hàm is_this_funny() thực hiện việc kiểm tra 11 ký tự đầu của chuỗi v6 xem có đúng bằng với chuỗi "I'm weebiii" không. Nếu không thì sẽ thực hiện thoát chương trình ngay. Còn nếu có thì chương trình được thực hiện tiếp đến khi thoát hàm main.
+- Tiếp trong hàm main, ta có 2 lệnh in màn hình, lệnh nhập cho biến nm với đầu vào `256` ký tự, in tiếp ra màn hình thông báo và lệnh `read(0, v6, 0x90);`, lệnh này gây buffer overflow vì biến v6 được khởi tạo có 96 bytes. Như vậy là mình có thể ghi đè thêm `0x30 bytes`.
+- Và sau đó là hàm `is_this_funny()` thực hiện việc kiểm tra `11` ký tự đầu của chuỗi `v6` xem có đúng bằng với chuỗi "I'm weebiii" không. Nếu không thì sẽ thực hiện thoát chương trình ngay. Còn nếu có thì chương trình được thực hiện tiếp đến khi thoát hàm main.
 
 ![img](./assets/is_this_funny.png)
 
-- Mình có rà soát lại các hàm khác và tìm được một hàm winwin(), tuy nhiên chúng ta đã không thể dùng lời gọi 0x3b để lấy được shell rồi :v.
+- Mình có rà soát lại các hàm khác và tìm được một hàm `winwin()`, tuy nhiên chúng ta đã không thể dùng lời gọi `0x3b` để lấy được shell rồi :v.
 
 ![img](./assets/winwin.png)
 
