@@ -28,6 +28,12 @@
 
 - I have used the `objdump` but have no idea with bunch of `Assembly` code. So I use `od` to take all binary contents of `bin` and recover it in my computer with `HxD` then put it in IDA to decompile [recovered_bin_file](/picoCTF/VNE/file/bin).
 
+> Note: 
+> - After read some write-up from pro, I realize that I can use scp to download that file to my computer instead of above method :grinning:. The reason I don't use scp is that I fail by using it from pico server and can't connect to my local, so stupid :man_facepalming:
+> - And here is the raw binary [bin](/picoCTF/VNE/file/real_bin). It uses `system()` that is exactly like my later thought :ghost:.
+> ![img](/picoCTF/VNE/assets/decompile_p2.png)
+> - Thanks for [trhoanglan04's write-up](https://hackmd.io/@trhoanglan04/BkNgwg7xn) cause it is so useful!
+
 - But unfortunately, The pseudo-code in IDA is unreadable :frowning_face:.
 
 ![img](/picoCTF/VNE/assets/decompile.png)
