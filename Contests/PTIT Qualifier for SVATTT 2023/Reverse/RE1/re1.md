@@ -58,8 +58,8 @@ for ( int i = 0 ; i < 2606 ; i++ )
 {
     for ( int j = 14 ; j >= 0 ; j-- ) 
     {
-        last_key = cipher[i] ^ last_mes;
-        cipher[i] = last_mes;
+        last_key = cipher[j] ^ last_mes;
+        cipher[j] = last_mes;
         last_mes = last_key
     }
 }
@@ -89,7 +89,7 @@ int main()
 			}
 		}
 
-		printf("%15s", c);
+		write(1, c, 15);
 		printf(" - %hhu\n", k);
 	}
 }
