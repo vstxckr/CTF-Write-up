@@ -30,7 +30,7 @@
 
 ![img](./assets/phase1.png)
 
-- Then It use bellow algorithm to encrypt.
+- Then it use bellow algorithm to encrypt.
 
 ```c
 char k_0 = given key
@@ -46,7 +46,7 @@ for ( int i = 0 ; i < 2606 ; i++ )
 }
 ```
 
-- And After this function, the program convert each element in array to string of 2 hex digits and concatenate it and get the `"0121317d1d5d0701636e355f4b237e"`. 
+- And after this section, the function converts each element in array to string of 2 hex digits and concatenate it and get the `"0121317d1d5d0701636e355f4b237e"`. 
 
 ## IDEA
 
