@@ -7,12 +7,12 @@
 ## OVERVIEW
 
 - This challenge give us a PE32 executable file.
-- Use IDA to decompile, I found this function does the check of input.
+- Using IDA to decompile, I found this function does the check of input.
 - The input of this function is taken from the `Item Text Window` and expect output of it is `"0121317d1d5d0701636e355f4b237e"` like a hex string.
 
 ![img](./assets/func.png)
 
-- This is flowchart of that function, I've changed it to `encrypt`. `encrypt()` is called from a long series of functions that has `WinMain` inside and the functionalily of `encrypt()` is do the encrypting and checking flag. 
+- This is flowchart of function calls. Which contains above function. I've changed name of it to `encrypt`. `encrypt()` is called from a long series of functions that has `WinMain` inside and the functionalily of `encrypt()` is do the encrypting and checking flag. 
 
 ![img](./assets/flow_chart.png)
 
