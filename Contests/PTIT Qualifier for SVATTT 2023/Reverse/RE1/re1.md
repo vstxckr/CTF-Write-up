@@ -22,7 +22,7 @@
 
 ![img](./assets/res.png)
 
-- So we know to find 2 correct argument.
+- So we need to find 2 correct arguments.
 
 - Let's dive in the encrypt code!
 
