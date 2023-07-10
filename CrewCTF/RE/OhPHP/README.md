@@ -4,24 +4,24 @@
 
 ## MỤC LỤC
 
-- [I. Overview](##I.-Overview).
-- [II. Idea](##II.-Idea).
-    - [1. Idea 1 - Compile ra file thực thi và dùng IDA decompile](###1.-Idea-1---Compile-ra-file-thực-thi-và-dùng-IDA-decompile).
-    - [2. Idea 2 - Decrypt lại file chall.php](###2.-Idea-2---Decrypt-lại-file-chall.php).
-        - [2.1 Rà soát file mã hóa](####2.1-Rà-soát-file-mã-hóa).
-        - [2.2 Giải mã tìm source code](####2.2-Giải-mã-tìm-source-code).
-            - [2.2.1 Lần 1 - loại bỏ biểu thức trong ngoặc có từ 2 - 4 toán hạng](#####2.2.1-Lần-1---loại-bỏ-biểu-thức-trong-ngoặc-có-từ-2---4-toán-hạng).
-            - [2.2.2 Lần 1.5 - thay thế ký tự '0'](#####2.2.2-Lần-1.5---thay-thế-ký-tự-'0').
-            - [2.2.3 Lần 2 - Rà soát những biểu thức có ký tự đặc biệt hoặc có biểu thức có từ 5 toán hạng trở lên](#####2.2.3-Lần-2---Rà-soát-những-biểu-thức-có-ký-tự-đặc-biệt-hoặc-có-biểu-thức-có-từ-5-toán-hạng-trở-lên).
-            - [2.2.4 Lần 3 - Sử dụng chatgpt để khôi phục lại code ban đầu](#####2.2.4-Lần-3---Sử-dụng-chatgpt-để-khôi-phục-lại-code-ban-đầu).
-- [III. Tìm Flag](##III.-Tìm-Flag).
-    - [1. Lệnh if thứ 1](###1.-Lệnh-if-thứ-1).
-    - [2. Lệnh if thứ 2](###2.-Lệnh-if-thứ-2).
-    - [3. Lệnh if thứ 3](###3.-Lệnh-if-thứ-3).
-    - [4. Lệnh if thứ 4 và 5](###4.-Lệnh-if-thứ-4-và-5).
-- [IV. Script Solve](##IV.-Script-Solve).
-- [V. Kết quả chạy Script](##V.-Kết-quả-chạy-Script).
-- [VI. Flag](##VI.-Flag).
+- [I. Overview](##i.-overview).
+- [II. Idea](##ii.-idea).
+    - [1. Idea 1 - Compile ra file thực thi và dùng IDA decompile](###1.-idea-1---compile-ra-file-thực-thi-và-dùng-ida-decompile).
+    - [2. Idea 2 - Decrypt lại file chall.php](###2.-idea-2---decrypt-lại-file-chall.php).
+        - [2.1 Rà soát file mã hóa](####2.1-rà-soát-file-mã-hóa).
+        - [2.2 Giải mã tìm source code](####2.2-giải-mã-tìm-source-code).
+            - [2.2.1 Lần 1 - loại bỏ biểu thức trong ngoặc có từ 2 - 4 toán hạng](#####2.2.1-lần-1---loại-bỏ-biểu-thức-trong-ngoặc-có-từ-2---4-toán-hạng).
+            - [2.2.2 Lần 1.5 - thay thế ký tự '0'](#####2.2.2-lần-1.5---thay-thế-ký-tự-'0').
+            - [2.2.3 Lần 2 - Rà soát những biểu thức có ký tự đặc biệt hoặc có biểu thức có từ 5 toán hạng trở lên](#####2.2.3-lần-2---rà-soát-những-biểu-thức-có-ký-tự-đặc-biệt-hoặc-có-biểu-thức-có-từ-5-toán-hạng-trở-lên).
+            - [2.2.4 Lần 3 - Sử dụng chatgpt để khôi phục lại code ban đầu](#####2.2.4-lần-3---sử-dụng-chatgpt-để-khôi-phục-lại-code-ban-đầu).
+- [III. Tìm Flag](##iii.-tìm-flag).
+    - [1. Lệnh if thứ 1](###1.-lệnh-if-thứ-1).
+    - [2. Lệnh if thứ 2](###2.-lệnh-if-thứ-2).
+    - [3. Lệnh if thứ 3](###3.-lệnh-if-thứ-3).
+    - [4. Lệnh if thứ 4 và 5](###4.-lệnh-if-thứ-4-và-5).
+- [IV. Script Solve](##iv.-script-solve).
+- [V. Kết quả chạy Script](##v.-kết-quả-chạy-script).
+- [VI. Flag](##vi.-flag).
 
 ## I. Overview
 
