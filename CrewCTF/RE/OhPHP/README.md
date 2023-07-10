@@ -7,7 +7,7 @@
 - [I. Overview](#i-overview).
 - [II. Idea](#ii-idea).
     - [1. Idea 1 - Compile ra file thực thi và dùng IDA decompile](#1-idea-1---compile-ra-file-thực-thi-và-dùng-ida-decompile).
-    - [2. Idea 2 - Decrypt lại file chall.php](#2-idea-2---decrypt-lại-file-chall.php).
+    - [2. Idea 2 - Decrypt lại file chall.php](#2-idea-2---decrypt-lại-file-challphp).
         - [2.1 Rà soát file mã hóa](#21-rà-soát-file-mã-hóa).
         - [2.2 Giải mã tìm source code](#22-giải-mã-tìm-source-code).
             - [2.2.1 Lần 1 - loại bỏ biểu thức trong ngoặc có từ 2 - 4 toán hạng](#221-lần-1---loại-bỏ-biểu-thức-trong-ngoặc-có-từ-2---4-toán-hạng).
