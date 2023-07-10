@@ -4,6 +4,7 @@
 
 ## MỤC LỤC
 
+- [Score & Rank](#score--rank)
 - [I. Overview](#i-overview).
 - [II. Idea](#ii-idea).
     - [1. Idea 1 - Compile ra file thực thi và dùng IDA decompile](#1-idea-1---compile-ra-file-thực-thi-và-dùng-ida-decompile).
@@ -23,10 +24,16 @@
 - [V. Kết quả chạy Script](#v-kết-quả-chạy-script).
 - [VI. Flag](#vi-flag).
 
+## Score & Rank
+
+![img](/CrewCTF/RE/OhPHP/assets/scoreboard.png)
+
+![img](/CrewCTF/RE/OhPHP/assets/solves_log.png)
+
 ## I. Overview
 
 - Bài cho chúng ta một file tên là [chall.php](/CrewCTF/RE/OhPHP/chall/chall.php). File này là có đuôi `.php` nên mình nghĩ là code PHP.
-- Tuy nhiên bên trong nó khá tởm, dài loằng ngoằng và có vẻ như đã được mã hóa bằng một cách nào đó mà mình chưa biết (bởi vì mình chưa thực sự code `php` bao giờ :confused:)
+- Tuy nhiên bên trong nó khá tởm, dài loằng ngoằng và có vẻ như đã được mã hóa bằng một cách nào đó mà mình chưa biết (bởi vì mình chưa thực sự code `PHP` bao giờ :confused:)
 
 ![img](/CrewCTF/RE/OhPHP/assets/chall_content.png)
 
@@ -69,7 +76,7 @@
 
 ![img](/CrewCTF/RE/OhPHP/assets/char.png)
 
-- Như vậy là những phân tử nhỏ này sẽ tạo ra từng ký tự bằng phép ``xor` - ^` 2 ký tự khác với nhau. Tiếp đó nó dùng phép `nối chuỗi - .` trong `PHP` và được như sau.
+- Như vậy là những phân tử nhỏ này sẽ tạo ra từng ký tự bằng phép `xor - toán tử ^` 2 ký tự khác với nhau. Tiếp đó nó dùng phép `nối chuỗi - toán tử .` trong `PHP` và được như sau.
 
 ![img](/CrewCTF/RE/OhPHP/assets/concat_string.png)
 
@@ -83,11 +90,11 @@
 
 ![img](/CrewCTF/RE/OhPHP/assets/gen_char.png)
 
-- Sau đó mình copy kết quả vừa nhận được vào một file [replace_1.python](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/replace_1.py) xem có kết quả như nào.
+- Sau đó mình copy kết quả vừa nhận được vào file [replace_1.python](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/replace_1.py), sau đó chạy file này.
 
 ![img](/CrewCTF/RE/OhPHP/assets/run_replace.png)
 
-- Kết quả ta được file [chall_1_after_run.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/chall_1_after_run.php) mới.
+- Kết quả ta được file [chall_1_after_run.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/chall_1_after_run.php).
 
 ![img](/CrewCTF/RE/OhPHP/assets/replace_1.png)
 
@@ -97,20 +104,20 @@
 
 ![img](/CrewCTF/RE/OhPHP/assets/test.png)
 
-- Sử dụng notepad để replace tất cả những chuỗi bên trên thành `'0'` ta được file [chall_2.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/chall_2.php) mới.
+- Sử dụng notepad để replace tất cả những chuỗi bên trên thành `'0'` ta được file [chall_2.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/chall_2.php).
 
 ![img](/CrewCTF/RE/OhPHP/assets/notepad_replace.png)
 
-- Ta sẽ thêm ký tự `'0'` vào bảng chữ cái của mảng trong file [gen_char_2.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/gen_char_2.php) và lặp lại các bước bên trên (kết quả chạy được ta sẽ có được [replace_2.py](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/replace_2.py)) là có thể tối giản gần hết rồi!.
+- Ta sẽ thêm ký tự `'0'` vào bảng chữ cái của mảng trong file [gen_char_2.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/gen_char_2.php) và lặp lại các bước bên trên (từ kết quả chạy được ta sẽ có được file [replace_2.py](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/replace_2.py)) là có thể tối giản gần hết rồi!.
 
-- Sau Khi chạy xong thì ta sẽ được kết quả là file [chall_2_after_run.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/chall_2_after_run.php)
+- Sau Khi chạy xong thì ta sẽ được là file [chall_2_after_run.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_2/chall_2_after_run.php)
 
 ![img](/CrewCTF/RE/OhPHP/assets/replace_2.png)
 
 
-##### 2.2.3 Lần 2 - Rà soát những biểu thức có ký tự đặc biệt hoặc có biểu thức có từ 5 toán hạng trở lên
+##### 2.2.3 Lần 2 - Rà soát những biểu thức có ký tự đặc biệt hoặc có biểu thức chứa 5 toán hạng trở lên
 
-- Bây giờ chỉ những biểu thức trong ngoặc đơn có `5` toán hạng trở lên và những ký tự nằm ngoài vùng in được được ra sẽ còn sót lại. Mình rà soát lại thì thấy còn những ký tự dưới đây còn sót.
+- Bây giờ chỉ những biểu thức trong ngoặc đơn chứa `5` toán hạng trở lên và những ký tự nằm ngoài vùng in được được ra sẽ còn sót lại. Mình rà soát lại thì thấy còn những ký tự dưới đây còn sót.
 
 ![img](/CrewCTF/RE/OhPHP/assets/remain_replace.png)
 
@@ -120,7 +127,7 @@
 
 ##### 2.2.4 Lần 3 - Sử dụng chatgpt để khôi phục lại code ban đầu
 
-- Sau một loạt những thao tác bên trên thì file hiện tại gần như đã là code rồi nhưng trông vẫn còn khá rối, mình nhờ anh Phong cho vào chatgpt tối giản code lại và được file [formatted](/CrewCTF/RE/OhPHP/decrypt_php/formatted.php).
+- Sau một loạt những thao tác bên trên thì file hiện tại gần như đã là code rồi nhưng trông vẫn còn khá rối, mình nhờ anh Phong cho vào chatgpt tối giản code lại và được file [formatted.php](/CrewCTF/RE/OhPHP/decrypt_php/formatted.php).
 
 ![img](/CrewCTF/RE/OhPHP/assets/chatgpt.png)
 
@@ -142,13 +149,13 @@ if (in_array(substr(constant("F"), 0, 5), ["crew{"]))
 
 ### 2. Lệnh if thứ 2
 
-- Câu lệnh `if` tiếp theo sẽ kiểm tra đảo ngược của kết quả thuật toán `crc32` của 4 ký tự tiếp theo có phải là `7607349263` hay không?
+- Câu lệnh `if` tiếp theo sẽ kiểm tra đảo ngược của kết quả thuật toán `crc32` của `4` ký tự tiếp theo có phải là `7607349263` hay không?
 
 ```php
 if (strstr(strrev(crc32(substr(constant("F"), 5, 4))), "7607349263"))
 ```
 
-- Với lệnh này thì đơn giản nhất là mình đi kiếm tool trên mạng, và mình đã kiếm ra được một tool sử dụng `python` nhưng bên trong xử lí bằng `C++` để tìm ra input cho đoạn hash hợp lệ. Link tool: [https://github.com/kmyk/zip-crc-cracker](https://github.com/kmyk/zip-crc-cracker).
+- Với lệnh này thì đơn giản nhất là mình đi kiếm tool trên mạng. Và mình đã kiếm ra được một tool sử dụng `python` nhưng bên trong xử lí bằng `C++` để tìm ra input cho đoạn hash hợp lệ. Link tool: [https://github.com/kmyk/zip-crc-cracker](https://github.com/kmyk/zip-crc-cracker).
 
 - Tool này dùng cho file zip nhưng không sao, mình sẽ hardcode cho đoạn input của code `C++` và mình chỉ cần input cho file zip bất kì là xong. Tool sau khi chỉnh sửa ở [đây](/CrewCTF/RE/OhPHP/break_crc32/break.py).
 
@@ -175,7 +182,7 @@ if (strnatcmp("A\x1b/k", substr(constant("F"), 5, 4) ^ substr(constant("F"), 9, 
 
 ### 4. Lệnh if thứ 4 và 5
 
-- Tới đây ta sẽ xem xét cả 2 cái `if` cuối.
+- Tới đây ta sẽ xem xét cả `2` cái `if` cuối.
 
 ```php
 srand(31337);
@@ -188,11 +195,11 @@ if (in_array(array_sum([(ctype_print(constant("D"))), strpos(substr(constant("F"
 
 ![img](/CrewCTF/RE/OhPHP/assets/openssl_decrypt.png)
 
-- Về cơ bản là nó sẽ sử dụng `2` chuỗi cố định là `$data`, và `$iv` cùng với `16` ký tự đầu tiên của `input` để cho ra output là kết quả được dercypt, sau đó so sánh với `17` ký tự tiếp theo xem nó có giống hay không. Nếu có thì ta đã tìm được `3` ký tự đúng.
+- Về cơ bản là nó sẽ sử dụng `2` chuỗi cố định là `$data`, và `$iv` cùng với `16` ký tự đầu tiên của `input` để cho ra output là kết quả được decrypt, sau đó so sánh với `17` ký tự tiếp theo xem nó có giống hay không. Nếu có thì ta đã tìm được `3` ký tự đúng.
 
 - Vậy tức là khi tìm được `3` ký tự đúng rồi thì ta cũng đã tìm được `17` ký tự tiếp theo từ vị trí `15`.
 
-- Câu lệnh `if` tiếp theo sẽ chỉ đơn giản là kiểm tra xem kết quả `base64` của phép toán `xor` `8` ký tự cuối cùng với `hash` `sha256` của `32` ký tự đầu tiên từ input có bằng `BwdRVwUHBQVF` hay không.
+- Câu lệnh `if` tiếp theo sẽ chỉ đơn giản là kiểm tra xem kết quả `base64` của phép toán `xor` `8` ký tự cuối cùng với `hash` `sha256` của `32` ký tự đầu tiên từ input có bằng `BwdRVwUHBQVF` hay không, đoạn này mình cũng lả lắm rồi nhưng may có anh Phong nhắc nên cũng định hình được vấn đề.
 
 ```php
 if (strcmp(base64_encode(hash("sha256", substr(constant("F"), 0, 32)) ^ substr(constant("F"), 32)), "BwdRVwUHBQVF"))
