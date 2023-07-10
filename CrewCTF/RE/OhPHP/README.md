@@ -11,7 +11,7 @@
         - [2.1 Rà soát file mã hóa](#21-rà-soát-file-mã-hóa).
         - [2.2 Giải mã tìm source code](#22-giải-mã-tìm-source-code).
             - [2.2.1 Lần 1 - loại bỏ biểu thức trong ngoặc có từ 2 - 4 toán hạng](#221-lần-1---loại-bỏ-biểu-thức-trong-ngoặc-có-từ-2---4-toán-hạng).
-            - [2.2.2 Lần 1.5 - thay thế ký tự '0'](#222-lần-15---thay-thế-ký-tự-'0').
+            - [2.2.2 Lần 1.5 - thay thế ký tự '0'](#222-lần-15---thay-thế-ký-tự-0).
             - [2.2.3 Lần 2 - Rà soát những biểu thức có ký tự đặc biệt hoặc có biểu thức có từ 5 toán hạng trở lên](#223-lần-2---rà-soát-những-biểu-thức-có-ký-tự-đặc-biệt-hoặc-có-biểu-thức-có-từ-5-toán-hạng-trở-lên).
             - [2.2.4 Lần 3 - Sử dụng chatgpt để khôi phục lại code ban đầu](#224-lần-3---sử-dụng-chatgpt-để-khôi-phục-lại-code-ban-đầu).
 - [III. Tìm Flag](#iii-tìm-flag).
