@@ -33,7 +33,7 @@
 ## I. Overview
 
 - Bài cho chúng ta một file tên là [chall.php](/CrewCTF/RE/OhPHP/chall/chall.php). File này là có đuôi `.php` nên mình nghĩ là code PHP.
-- Tuy nhiên bên trong nó khá tởm, dài loằng ngoằng và có vẻ như đã được mã hóa bằng một cách nào đó mà mình chưa biết (bởi vì mình chưa thực sự code `PHP` bao giờ :confused:)
+- Tuy nhiên bên trong nó khá tởm, dài loằng ngoằng và có vẻ như đã được mã hóa bằng một cách nào đó mà mình chưa biết (bởi vì mình chưa thực sự code PHP bao giờ :confused:)
 
 ![img](/CrewCTF/RE/OhPHP/assets/chall_content.png)
 
@@ -239,6 +239,8 @@ define("D", openssl_decrypt("wCX3NcMho0BZO0SxG2kHxA==", "aes-128-cbc", $str, 2, 
 ## V. Kết quả chạy Script
 
 ![img](/CrewCTF/RE/OhPHP/assets/flag.png)
+
+![img](/CrewCTF/RE/OhPHP/assets/result.png)
 
 ## VI. Flag
 
