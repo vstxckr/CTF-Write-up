@@ -76,7 +76,7 @@
 
 ![img](/CrewCTF/RE/OhPHP/assets/char.png)
 
-- Như vậy là những phân tử nhỏ này sẽ tạo ra từng ký tự bằng phép `xor - toán tử ^` 2 ký tự khác với nhau. Tiếp đó nó dùng phép `nối chuỗi - toán tử .` trong `PHP` và được như sau.
+- Như vậy là những phần tử nhỏ này sẽ tạo ra từng ký tự bằng phép `xor - toán tử ^` của 2 ký tự khác với nhau. Tiếp đó nó dùng phép `nối chuỗi - toán tử .` trong `PHP` và được một chuỗi lớn hơn.
 
 ![img](/CrewCTF/RE/OhPHP/assets/concat_string.png)
 
@@ -86,7 +86,7 @@
 
 - Theo quan sát của mình thì trong file gốc tác giả sử dụng khoảng 8 ký tự là (`'['`, `']'`, `'('`, `')'`, `':'`, `','`, `'.'`, `'?'`).
 
-- Do đó mình viết một file code [gen_char_1.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/gen_char_1.php) đơn giản để thực hiện phép toán ``xor`` cho chỉnh hợp lặp của tập hợp này, nó sẽ in ra những bộ có thể cho ra ký tự có thể in được (trong khoảng từ `32` đến `126`) dưới dạng code python.
+- Do đó mình viết một file code [gen_char_1.php](/CrewCTF/RE/OhPHP/decrypt_php/reduce_1/gen_char_1.php) đơn giản để thực hiện phép toán ``xor`` cho chỉnh hợp lặp của tập hợp này, nó sẽ in ra những bộ có thể cho ra ký tự có thể in được (trong đoạn từ `32` đến `126`) dưới dạng code python.
 
 ![img](/CrewCTF/RE/OhPHP/assets/gen_char.png)
 
