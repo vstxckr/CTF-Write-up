@@ -14,7 +14,7 @@
 						printf("Nope xor!\n");
 					} else {
 						srand(31337);
-						define("D", openssl_decrypt("wCX3NcMho0BZO0SxG2kHxA==", "aes-128-cbc", substr(constant("F"), 0, 16), 2, pack("L*", rand(), rand(), rand(), rand())));openssl_decrypt("wCX3NcMho0BZO0SxG2kHxA==", "aes-128-cbc", $str, 2,"\x5b\xa6\x65\x5c\x0f\x8d\xbd\x67\x0b\x55\xb4\x7b\x7e\xce\xba\x29");
+						define("D", openssl_decrypt("wCX3NcMho0BZO0SxG2kHxA==", "aes-128-cbc", substr(constant("F"), 0, 16), 2, pack("L*", rand(), rand(), rand(), rand())));
 						if (in_array(array_sum([(ctype_print(constant("D"))), strpos(substr(constant("F"), 15, 17), constant("D"))]), [2])) {
 							if (strcmp(base64_encode(hash("sha256", substr(constant("F"), 0, 32)) ^ substr(constant("F"), 32)), "BwdRVwUHBQVF")) {
 								printf("Nope!\n");
