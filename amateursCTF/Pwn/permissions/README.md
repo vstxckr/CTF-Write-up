@@ -25,6 +25,6 @@ echo "\x48\xC7\xC0\x01\x00\x00\x00\x48\x89\xFE\x48\xC7\xC7\x01\x00\x00\x00\x48\x
 
 ## RESULT
 
-![img](/amateursCTF/Pwn/permissiono/assets/result.png)
+![img](/amateursCTF/Pwn/permissions/assets/result.png)
 
 >### Flag: amateursCTF{exec_1mpl13s_r34d_8751fda0}
