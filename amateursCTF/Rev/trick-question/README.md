@@ -88,8 +88,8 @@
 
 ### 5. Part 4
 
-- Part 4 chỉ kiêm tra đơn giản, kết quả là '0f'.
-![img](/amateursCTF/Rev/trick-question/assets/p4.png)
+- Part 4 chỉ kiêm tra đơn giản, kết quả là `'0f'`.
+</br>![img](/amateursCTF/Rev/trick-question/assets/p4.png)
 
 ### 6. Part 5
 
