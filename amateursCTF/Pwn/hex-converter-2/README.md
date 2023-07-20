@@ -37,3 +37,5 @@ print(flag.decode("ASCII"))
 ## Result
 
 ![img](/amateursCTF/Pwn/hex-converter-2/assets/flag.png)
+
+>### Flag: amateursCTF{an0ther_e4sier_0ne_t0_offset_unvariant_while_l00p}
