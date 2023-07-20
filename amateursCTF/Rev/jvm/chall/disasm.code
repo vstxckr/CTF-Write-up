@@ -1,0 +1,209 @@
+# print '> '
+0.  input[b1++] = 20
+2.  input[b1++] = 3e
+4.  print(input[b1])
+5.  print(input[b1])
+
+6.  eax += a
+9.  eax += eax
+c.  eax += eax
+f.  eax += 2
+
+# loop take input
+12. input[b1] = read()
+13. eax -= 1
+16. if (eax != 0): jmp 12
+
+19. jmp 2c
+
+# print YES
+1b. input[b1++] = 53
+1d. input[b1++] = 45
+1f. input[b1++] = 59
+21. print(input[b1])
+22. print(input[b1])
+23. print(input[b1])
+24. return
+
+# print NO
+25. input[b1++] = 4f
+27. input[b1++] = 4e
+29. print(input[b1])
+2a. print(input[b1])
+2b. return
+
+# check flag
+2c. eax = input[--b1]
+2e. eax -= 7d
+31. if (eax != 0): jmp 25
+34. eax = input[--b1]
+36. eax -= 9
+39. eax -= 36
+3c. if (eax != 0): jmp 25
+3f. ecx = input[--b1]
+41. ecx -= a
+44. ecx -= 63
+47. if (ecx != 0): jmp 25
+4a. ecx = input[--b1]
+4c. ecx -= 15
+4f. ecx -= 61
+52. if (ecx != 0): jmp 25
+55. eax = input[--b1]
+57. eax -= 5f
+5a. if (eax != 0): jmp 25
+
+# ? character
+5d. eax = input[--b1]
+5f. ebx += 1
+62. swapreg 0, 1
+64. ebx += ebx
+67. ecx += 7
+6a. eax += eax
+6d. ecx -= 1
+70. if (ecx != 0): jmp 6a
+73. eax += 2
+76. eax -= ebx
+79. ebx -= ebx
+7c. if (eax != 0): jmp 25
+
+7f. eax = input[--b1]
+81. eax -= 5f
+84. if (eax != 0): jmp 25
+87. ebx = input[--b1]
+89. ebx -= 1
+8c. ebx -= 73
+8f. if (ebx != 0): jmp 25
+92. ecx = input[--b1]
+94. ecx -= 3
+97. ecx -= 6b
+9a. if (ecx != 0): jmp 25
+9d. ebx = input[--b1]
+9f. ebx -= 3
+a2. ebx -= 70
+a5. if (ebx != 0): jmp 25
+a8. eax = input[--b1]
+aa. eax -= 7
+ad. eax -= 62
+b0. if (eax != 0): jmp 25
+b3. eax = input[--b1]
+b5. eax -= 5f
+b8. if (eax != 0): jmp 25
+bb. eax = input[--b1]
+bd. eax -= 4
+c0. eax -= 30
+c3. if (eax != 0): jmp 25
+c6. edx = input[--b1]
+c8. edx -= b
+cb. edx -= 6b
+ce. if (edx != 0): jmp 25
+d1. edx = input[--b1]
+d3. edx -= 4
+d6. edx -= 30
+d9. if (edx != 0): jmp 25
+dc. ebx = input[--b1]
+de. ebx -= 13
+e1. ebx -= 57
+e4. if (ebx != 0): jmp 25
+e7. eax = input[--b1]
+e9. eax -= 5f
+ec. if (eax != 0): jmp 25
+ef. ecx = input[--b1]
+f1. ecx -= 1a
+f4. ecx -= 54
+f7. if (ecx != 0): jmp 25
+fa. ecx = input[--b1]
+fc. ecx -= 4
+ff. ecx -= 30
+102. if (ecx != 0): jmp 25
+105. ebx = input[--b1]
+107. ebx -= 7
+10a. ebx -= 2c
+10d. if (ebx != 0): jmp 25
+110. ebx = input[--b1]
+112. ebx -= f
+115. ebx -= 5e
+118. if (ebx != 0): jmp 25
+11b. eax = input[--b1]
+11d. eax -= 5f
+120. if (eax != 0): jmp 25
+123. ebx = input[--b1]
+125. ebx -= 29
+128. ebx -= 2c
+12b. if (ebx != 0): jmp 25
+12e. ecx = input[--b1]
+130. ecx -= 27
+133. ecx -= 48
+136. if (ecx != 0): jmp 25
+139. ecx = input[--b1]
+13b. ecx -= 2d
+13e. ecx -= 4c
+141. if (ecx != 0): jmp 25
+144. eax = input[--b1]
+146. eax -= 5f
+149. if (eax != 0): jmp 25
+14c. eax = input[--b1]
+14e. eax -= 7
+151. eax -= 29
+154. if (eax != 0): jmp 25
+157. ebx = input[--b1]
+159. ebx -= 23
+15c. ebx -= 41
+15f. if (ebx != 0): jmp 25
+162. eax = input[--b1]
+164. eax -= 5f
+167. if (eax != 0): jmp 25
+16a. ecx = input[--b1]
+16c. ecx -= 2c
+16f. ecx -= 48
+172. if (ecx != 0): jmp 25
+175. edx = input[--b1]
+177. edx -= 4
+17a. edx -= 30
+17d. if (edx != 0): jmp 25
+180. edx = input[--b1]
+182. edx -= 0
+185. edx -= 68
+188. if (edx != 0): jmp 25
+18b. eax = input[--b1]
+18d. eax -= 1c
+190. eax -= 5b
+193. if (eax != 0): jmp 25
+196. eax = input[--b1]
+198. eax -= 7b
+19b. if (eax != 0): jmp 25
+19e. eax = input[--b1]
+1a0. eax -= 46
+1a3. if (eax != 0): jmp 25
+1a6. eax = input[--b1]
+1a8. eax -= 54
+1ab. if (eax != 0): jmp 25
+1ae. eax = input[--b1]
+1b0. eax -= 43
+1b3. if (eax != 0): jmp 25
+1b6. eax = input[--b1]
+1b8. eax -= 73
+1bb. if (eax != 0): jmp 25
+1be. eax = input[--b1]
+1c0. eax -= 72
+1c3. if (eax != 0): jmp 25
+1c6. eax = input[--b1]
+1c8. eax -= 75
+1cb. if (eax != 0): jmp 25
+1ce. eax = input[--b1]
+1d0. eax -= 65
+1d3. if (eax != 0): jmp 25
+1d6. eax = input[--b1]
+1d8. eax -= 74
+1db. if (eax != 0): jmp 25
+1de. eax = input[--b1]
+1e0. eax -= 61
+1e3. if (eax != 0): jmp 25
+1e6. eax = input[--b1]
+1e8. eax -= 6d
+1eb. if (eax != 0): jmp 25
+1ee. eax = input[--b1]
+1f0. eax -= 61
+1f3. if (eax != 0): jmp 25
+
+# jmp to print yes above
+1f6. jmp 1b
